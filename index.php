@@ -58,5 +58,8 @@ require "functions.php";
                 </tbody>
             </table>
         </div>
+        <footer>
+        <p>&copy; 2024 by Habib Husain Nurrohim. All rights reserved.</p>
+    </footer>
 </body>
 </html>

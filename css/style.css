@@ -193,3 +193,15 @@ td a:hover {
     background-color: #4CAF50;
     color: white;
 }
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
