@@ -1,13 +1,13 @@
 # Pencatatan Perjalanan
 
 Pencatatan Perjalanan adalah aplikasi sederhana untuk mencatat dan mengelola pengeluaran perjalanan Anda. Aplikasi ini memungkinkan pengguna untuk menambahkan, mengedit, dan menghapus catatan perjalanan, serta melihat total pengeluaran.
-![Tampilan Perjalanan](./css/image/tampilan.png)
+![Tampilan Perjalanan](./screenshot/tampilan.png)
 
 
 ## Fitur
-![Tampilan Perjalanan](./css/image/tambah.png)
+![Tampilan Perjalanan](./screenshot/tambah.png)
 - **Tambah Perjalanan:** Menambahkan rincian perjalanan baru, termasuk transportasi, lokasi awal, lokasi tujuan, pengeluaran, foto, dan tanggal perjalanan.
-![Tampilan Perjalanan](./css/image/edit.png)
+![Tampilan Perjalanan](./screenshot/edit.png)
 - **Edit Perjalanan:** Memperbarui informasi perjalanan yang telah ada.
 - **Hapus Perjalanan:** Menghapus catatan perjalanan yang tidak lagi diperlukan.
 - **Lihat Total Pengeluaran:** Menghitung dan menampilkan total pengeluaran dari semua perjalanan yang telah dicatat.

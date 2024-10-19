@@ -1,19 +1,17 @@
 <?php
 
-require "db.php";
-$get_id = $_GET['id'];
+require "functions.php";
 
-$hapus_perjalanan = "DELETE FROM perjalanan WHERE id='$get_id'";
-$hapus= $db->query($hapus_perjalanan);
+$hapus= delete_perjalanan();
 
 if($hapus){
     echo "<script>
     alert('Data Berhasil di Hapus');
-    window.location='perjalanan.php';
+    window.location='index.php';
     </script>";
 }else{
     echo "<script>
     alert('Data Gagal di Hapus');
-    window.location='perjalanan.php';
+    window.location='index.php';
     </script>";
 }   
