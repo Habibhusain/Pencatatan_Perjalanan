@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
             <label>Ke</label>
             <input type="text" name="ke_jalan" value="<?php echo ambil_data_perjalanan()['ke_jalan']; ?>" required>
             <label>pengeluaran</label>
-            <input type="text" name="pengeluaran" value="<?php echo ambil_data_perjalanan()['pengeluaran']; ?>" required>
+            <input type="text" name="pengeluaran" value="Rp<?php echo number_format(ambil_data_perjalanan()['pengeluaran'],0,",","."); ?>" required>
             <label>Foto</label>
             <img src="image/<?php echo ambil_data_perjalanan()['dok']; ?>" width="100px" alt="">
             <input type="file" name="dok" value="<?php echo ambil_data_perjalanan()['dok']; ?>" required>
