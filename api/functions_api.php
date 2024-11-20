@@ -2,13 +2,13 @@
 require "db.php";
 
 // untuk menjumlahkan total pengeluaran
-function tampil_hitung_perjalanan() {
+function tampil_hitung_perjalanan() { 
 
     $tampil_hitung_perjalanan = "SELECT SUM(pengeluaran) FROM perjalanan";
     $hitung_perjalanan = database()->query($tampil_hitung_perjalanan);
 
     $hitung_data=[];
-    while ($hitung = $hitung_perjalanan->fetchArray()) {
+    while ($hitung = $hitung_perjalanan->fetchArray(SQLITE3_ASSOC)) {
         $hitung_data[] = $hitung;
     }
 
@@ -22,7 +22,7 @@ function tampil_data_perjalanan() {
     $tampil_perjalanan = database()->query($tampil_data_perjalanan);
 
     $tampil_data=[];
-    while ($row = $tampil_perjalanan->fetchArray()) {
+    while ($row = $tampil_perjalanan->fetchArray(SQLITE3_ASSOC)) {
         $tampil_data[] = $row;
     }
 
@@ -31,17 +31,20 @@ function tampil_data_perjalanan() {
 
 // fungsi untuk mengupload gambar
 function upload_perjalanan() {
+
     $ambil_ukuran_file = $_FILES['dok']['size'];
     $ukuran_diizinkan = 10000000;
 
-    if($ambil_ukuran_file > $ukuran_diizinkan) {
+    if ($ambil_ukuran_file > $ukuran_diizinkan) {
         echo 'ukurannya Maksimal 10 MB !!';
     }
+
     $ambil_nama_file = $_FILES['dok']['name'];
     $ambil_extensi_file = pathinfo($ambil_nama_file, PATHINFO_EXTENSION);
     $extensi_diizinkan = array('jpg','jpeg','png', 'avif', 'JPG','svg');
 
     if (in_array($ambil_extensi_file, $extensi_diizinkan)) {
+
         $ambil_tmp_file = $_FILES['dok']['tmp_name'];
         $tujuan_folder ="image/";
         $target_file = $tujuan_folder . basename($ambil_nama_file);
@@ -57,7 +60,6 @@ function upload_perjalanan() {
         return FALSE;
     }
 }
-
 
 //fungsi untuk menambah perjalanan
 function tambah_perjalanan() {
@@ -110,20 +112,21 @@ function update_perjalanan() {
 }
 
 // fungsi untuk mengambil data perjalanan berdasarkan id yang diinputkan
-function ambil_data_perjalanan()
-{
+function ambil_data_perjalanan() {
+     
     $get_id = $_GET['id'];
 
     $ambil_data_perjalanan = "SELECT * FROM perjalanan WHERE id ='$get_id' ";
     $ambil_perjalanan = database()-> query($ambil_data_perjalanan);
-    $ambil = $ambil_perjalanan -> fetchArray();
+    $ambil = $ambil_perjalanan -> fetchArray(SQLITE3_ASSOC);
 
     return $ambil;
+
 }
 
 // fungsi untuk menghapus perjalanan
-function delete_perjalanan()
-{
+function delete_perjalanan() {
+
     $get_id = $_GET['id'];
 
     $delete_data_perjalanan = "DELETE FROM perjalanan WHERE id = '$get_id'";

@@ -1,25 +1,24 @@
 <?php
-
 require "functions.php";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
     $update_perjalanan = update_perjalanan();
-        if($update_perjalanan)
-        {
-            echo "<script>
-            alert('Data Berhasil di Edit');
-            window.location = 'index.php';
-            </script>";
-            exit();
-        }else{
-            echo "<script>
-            alert('Data Gagal di Edit');
-            window.location = 'edit_perjalanan.php';
-            </script>";
-            exit();
-        }
+    
+    if ($update_perjalanan) {
+        echo "<script>
+        alert('Data Berhasil di Edit');
+        window.location = 'index.php';
+        </script>";
+        exit();
+    } else {
+        echo "<script>
+        alert('Data Gagal di Edit');
+        window.location = 'edit_perjalanan.php';
+        </script>";
+        exit();
     }
+}
 ?>
 
 <!DOCTYPE html>

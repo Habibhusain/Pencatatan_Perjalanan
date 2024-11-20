@@ -1,18 +1,17 @@
 <?php
-
 require "functions.php";
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST')
-    {
-        $tambah_perjalanan = tambah_perjalanan();
-    if($tambah_perjalanan)
-    {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $tambah_perjalanan = tambah_perjalanan();
+
+    if ($tambah_perjalanan) {
         echo "<script>
         alert('Data Berhasil di Tambah');
         window.location='index.php';
         </script>";
         exit();
-    }else{
+    } else {
         echo "<script>
         alert('Data Gagal di Tambah');
         window.location='tambah_perjalanan.php';
@@ -20,9 +19,8 @@ require "functions.php";
         exit();
     }
 
-    }
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
